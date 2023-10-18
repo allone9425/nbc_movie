@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Information</title>
+</head>
+<body>
+    <h1>Movie Information</h1>
+
+    <div id="movieInfo"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiKey = '3508739bb6efd7ac5c0d7987f4f50eee'; // Replace with your TMDB API key
+
+            // Make a request to TMDB API (you can replace 'Inception' with any default movie title)
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=Inception`, true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    const movie = data.results[0];
+                    const movieInfo = document.getElementById('movieInfo');
+
+                    if (movie) {
+                        const title = movie.title;
+                        const overview = movie.overview;
+                        const releaseDate = movie.release_date;
+
+                        movieInfo.innerHTML = `
+                            <h2>${title}</h2>
+                            <p>${overview}</p>
+                            <p>Release Date: ${releaseDate}</p>
+                        `;
+                    } else {
+                        movieInfo.innerHTML = '<p>Movie not found</p>';
+                    }
+                } else {
+                    console.error('Error fetching data:', xhr.statusText);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error('Request failed');
+            };
+
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

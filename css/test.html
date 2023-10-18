@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      width: 200px;
+      padding: 50px;
+      background-color: yellow;
+    }
+
+    #movies {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+  </style>
+
+</head>
+
+<body>
+  <section id="movies">
+    <div class="card">
+      <p><img src="https://placekitten.com/200/300"></p>
+      <h3 class="title">영화제목</h3>
+      <div class="txt">명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 국가는 사회보장·사회복지의 증진에 노력할
+        의무를 진다.
+        국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된때에는 그러하지 아니하다. 국가안전보장에 관련되는대외정책·군사정책과 국내정책의
+        수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에응하기 위하여 국가안전보장회의를 둔다.</div>
+      <p class="rating">평점: 8.5</p>
+    </div>
+    <div class="card">
+      <p><img src="https://placekitten.com/200/300"></p>
+      <h3 class="title">영화제목</h3>
+      <div class="txt">명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다. 국가는 사회보장·사회복지의 증진에 노력할
+        의무를 진다.
+        국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된때에는 그러하지 아니하다. 국가안전보장에 관련되는대외정책·군사정책과 국내정책의
+        수립에 관하여 국무회의의 심의에 앞서 대통령의 자문에응하기 위하여 국가안전보장회의를 둔다.</div>
+      <p class="rating">평점: 8.5</p>
+    </div>
+
+  </section>
+  <button onclick="hey()">테스트</button>
+  <script>
+    
+
+    function hey() {
+      // 1. 먼저 API를 갖고옴 
+      let movie_url = 'https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&api_key=3508739bb6efd7ac5c0d7987f4f50eee';
+      // 2. 기존의 HTML 제거 
+      document.querySelector('#movies').innerHTML = '';
+      // 3. 1번의 API를 패치안에 넣고 data라는 매개변수도 넣음
+      fetch(movie_url).then(res => res.json()).then(data => {
+      // 4. 무비리스트 선언해서 API자료 갖고 오고 
+        let movie_list = data['results'];
+      // 5. 여러개 출력되도록 반복문 하기 
+        movie_list.forEach(movie_box => {
+      // 6. API 데이터를 변수에 할당해주기 
+          let movie_title = movie_box['title'];
+          let movie_overview = movie_box['overview'];
+          let movie_rating = movie_box['vote_average'];
+          let poster_path = movie_box['poster_path'];
+      // 7. 붙여넣기 할 카드 temp_html
+          let temp_html = `    <div class="card">
+                                <p><img src="https://placekitten.com/200/300"></p>
+                                <h3 class="title">${movie_title}</h3>
+                                <div class="txt">${movie_overview}</div>
+                                <p class="rating">${movie_rating}</p>
+                              </div>`
+      // 8. 이건 html에 붙이기
+          document.querySelector('#movies').insertAdjacentHTML('beforeend', temp_html)
+          //console.log(movie_title, movie_rating); <-- 올바르게 출력되나 테스트 함
+        });//data['results'][0]['title']; <- 이건 영화제목이 잘 뽑히는지 테스트함 
+      })
+    }
+  </script>
+</body>
+
+</html>

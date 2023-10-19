@@ -7,7 +7,7 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <title>[이다원] Today Movie</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js"></script>
+
 
 </head>
 
@@ -19,7 +19,7 @@
         <nav id="nav">
           <ul>
             <li><a href="index.html">홈</a></li>
-            <li>검색</li>
+            <li class="nav_search" onselectstart="return false">검색</li>
           </ul>
         </nav>
       </div> <!--inner-->
@@ -27,8 +27,17 @@
     <section id="first" style="height: 500px; background-color: yellowgreen;">
       <p>가나다라마법사</p>
     </section>
-    <section id="second" style="background-color: lemonchiffon;height: 400px;">
-매지컬☆ 큐티
+    <section id="search">
+      <div id="movie_search" class="hide">
+        <div class="search_box_frame">
+          <input type="text" class="search_txt" placeholder="검색하고 싶은 영화를 입력하세요:)"></input>
+          <button class="search_btn">&#128269;</button>
+        </div>
+      </div>
+    </section>
+    <section id="movies">
+      <h2>Best Movie</h2>
+      <div id="card_box" class="max"></div>
     </section>
     <footer id="footer">
       <div class="inner max">
@@ -68,6 +77,10 @@
       </div><!--footer_inner + max -->
     </footer>
   </div> <!--wrap-->
+
+
+
+  <script src="script.js"></script>
 </body>
 
 </html>

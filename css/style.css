@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pretendard-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,8 +27,8 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
+	
+	font-weight: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -47,6 +60,15 @@ a{
 	text-decoration: none;
 }
 /*초기화 끝*/
+
+html{
+	font-size: 62.5%;
+}
+body{
+	font-size: 1.6rem;
+	font-family: 'Pretendard-Regular';
+	color:#343434;
+}
 .max {
 	width: 100%;
 	max-width: 1300px;
@@ -88,11 +110,19 @@ a{
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	font-size: 2.5rem;
 }
 
 #nav ul li {
 	padding: 10px 20px;
 }
+
+
+#nav .nav_search{
+	cursor: pointer;
+}
+
+
 
 /*푸터*/
 
@@ -198,3 +228,102 @@ a{
 #footer .footer_shortcut p{border:1px solid #777; padding: 5px 10px; height: 30px;margin-left:10px; width: 150px;text-align: center;margin-bottom: 10px;}
 
 */
+
+
+/*무비*/
+#movies {
+	margin: 100px 0;
+}
+#movies #card_box .card {
+	width: 300px;
+    padding: 50px;
+    border-radius: 18px;
+    background-color: yellow;
+    margin: 10px 0;
+
+}
+
+#movies #card_box {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+#movies .card img {
+	width: 100%;
+}
+
+#movies h2{
+	font-family: 'yg-jalnan';
+	text-align: center;
+	font-size: 5.2rem;
+	margin-bottom: 70px;
+	color:#ff7591
+}
+
+/*검색창*/
+#movie_search{
+	position: relative;
+	z-index: 999;
+	top: 50%;
+	width: 50%;
+transition: 1s;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+}
+
+#movie_search .search_box_frame{
+	display: flex;
+	justify-content: space-between;
+}
+
+#movie_search .search_txt {
+	outline: none;
+	border: none;
+	font-size: 3.3rem;
+	width: 100%;
+	padding: 20px 20px 20px 5px;
+	box-sizing: border-box;
+border-bottom: 3px solid #ff7591;
+}
+
+
+#movie_search .search_txt::placeholder {
+  color: #ccc;
+}
+
+	#movie_search .search_btn{
+		font-size: 3.3rem;
+    box-sizing: border-box;
+		border:none;
+		background-color: transparent;
+		border-bottom: 3px solid #ff7591;
+	}
+
+	.show {
+
+		display: block;
+		margin: 100px 0 200px;
+	}
+
+	.hide{
+		display: none;
+		margin: 0;
+	}
+
+	#movies .card h3{
+
+		font-size: 2.2rem;
+    padding: 20px 0px 20px 20px;
+    font-weight: bold;
+    background-color:#FBDE00;
+		margin-top: -3px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+
+	#movies .card .txt{
+		padding:10px;
+		line-height: 2.1rem;
+	}

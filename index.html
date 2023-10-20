@@ -25,7 +25,7 @@
             <li class="nav_search" onselectstart="return false">검색</li>
           </ul> -->
 
-          <p class="nav_search" onselectstart="return false">&#128269;</p>
+          <p class="nav_search" onselectstart="return false">검색 &#128269;</p>
 
         </nav>
       </div> <!--inner-->
@@ -33,25 +33,45 @@
 
 
 
-    <section id="slide" style="height: 600px; background-color: #eee;">
-      <div class="swiper mySwiper">
+
+
+
+    <section id="search">
+      <div id="movie_search" class="hide">
+        <form class="search_box_frame">
+          <input type="text" class="search_txt" placeholder="검색하고 싶은 영화 제목을 입력하세요:)"></input>
+          <button class="search_btn">&#128269;</button>
+        </form>
+        <button class="search_btn_close"> &#128473;</button>
+      </div>
+    </section>
+    <section id="movies">
+      <h2>Best ⭐ Movie</h2>
+      <div id="card_box" class="max"></div>
+    </section>
+
+
+
+    <section id="slide" style="height: 600px; background-color: #fff;">
+      <h2>Now 🤍 Playing</h2>
+      <div class="swiper mySwiper max">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slide_content">
               <p><img src="http://placekitten.com/400/450"></p>
-              <h2>안녕,야옹</h2>
+              <h3>안녕,야옹</h3>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide_content">
               <p><img src="http://placekitten.com/400/450"></p>
-              <h2>안녕,야옹</h2>
+              <h3>안녕,야옹</h3>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide_content">
               <p><img src="http://placekitten.com/400/450"></p>
-              <h2>안녕,야옹</h2>
+              <h3>안녕,야옹</h3>
             </div>
           </div>
           <div class="swiper-slide">Slide 4</div>
@@ -68,21 +88,6 @@
       </div>
     </section>
 
-
-
-    <section id="search">
-      <div id="movie_search" class="hide">
-        <form class="search_box_frame">
-          <input type="text" class="search_txt" placeholder="검색하고 싶은 영화를 입력하세요:)"></input>
-          <button class="search_btn">&#128269;</button>
-        </form>
-        <button class="search_btn_close"> &#128473;</button>
-      </div>
-    </section>
-    <section id="movies">
-      <h2>Best ⭐ Movie</h2>
-      <div id="card_box" class="max"></div>
-    </section>
     <footer id="footer">
       <div class="inner max">
         <div class="footer_logo">

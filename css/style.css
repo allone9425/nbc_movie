@@ -337,12 +337,31 @@ body{
 	transform: translate(0px, -47px);
 }
 
+#movies .card .movie_date {
+	background-color: rgba(255, 117, 145, 0.8);
+	padding: 10px;
+	position: absolute;
+	/* top: -40px; */
+	top: 7px;
+	font-size: 2rem;
+	left: 7px;
+	border-radius: 10px;
+	transition: 0.8s;
+	transform: translate(0px, -47px);
+}
+
+
 #movies .card:hover .txt {
 	/*bottom: 62px;*/
 	transform: translate(0px, 0px);
 }
 
 #movies .card:hover .rating {
+	transform: translate(0px, 0px);
+	/*top: 7px;*/
+
+}
+#movies .card:hover .movie_date {
 	transform: translate(0px, 0px);
 	/*top: 7px;*/
 

@@ -63,12 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
       let movie_overview = movie_box['overview'];
       let movie_rating = movie_box['vote_average'];
       let movie_poster = movie_box['poster_path'];
+      let movie_date = movie_box['release_date'];
 
       let temp_html = `    <div class="card">
                             <p><img src="https://image.tmdb.org/t/p/original${movie_poster}"></p>
                             <h3 class="title">${movie_title}</h3>
                             <div class="txt">${movie_overview}</div>
                             <p class="rating">⭐ ${movie_rating}</p>
+                            <p class="movie_date">🎬 ${movie_date}</p>
                           </div>`
       document.querySelector('#card_box').insertAdjacentHTML('beforeend', temp_html)
       // console.log(movie_poster);

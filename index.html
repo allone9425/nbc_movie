@@ -6,8 +6,11 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <title>[이다원] Today Movie</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
 
@@ -17,26 +20,67 @@
       <div class="inner max">
         <h1 id="logo"><a href="index.html"></a></h1>
         <nav id="nav">
-          <ul>
+          <!-- <ul>
             <li><a href="index.html">홈</a></li>
             <li class="nav_search" onselectstart="return false">검색</li>
-          </ul>
+          </ul> -->
+
+          <p class="nav_search" onselectstart="return false">&#128269;</p>
+
         </nav>
       </div> <!--inner-->
     </header>
-    <section id="first" style="height: 500px; background-color: yellowgreen;">
-      <p>가나다라마법사</p>
+
+
+
+    <section id="slide" style="height: 600px; background-color: #eee;">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide_content">
+              <p><img src="http://placekitten.com/400/450"></p>
+              <h2>안녕,야옹</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide_content">
+              <p><img src="http://placekitten.com/400/450"></p>
+              <h2>안녕,야옹</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide_content">
+              <p><img src="http://placekitten.com/400/450"></p>
+              <h2>안녕,야옹</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+          <div class="swiper-slide">Slide 10</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
+
+
+
     <section id="search">
       <div id="movie_search" class="hide">
-        <div class="search_box_frame">
+        <form class="search_box_frame">
           <input type="text" class="search_txt" placeholder="검색하고 싶은 영화를 입력하세요:)"></input>
           <button class="search_btn">&#128269;</button>
-        </div>
+        </form>
+        <button class="search_btn_close"> &#128473;</button>
       </div>
     </section>
     <section id="movies">
-      <h2>Best Movie</h2>
+      <h2>Best ⭐ Movie</h2>
       <div id="card_box" class="max"></div>
     </section>
     <footer id="footer">
@@ -81,6 +125,7 @@
 
 
   <script src="script.js"></script>
+  <script src="script_swiper.js"></script>
 </body>
 
 </html>

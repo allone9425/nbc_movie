@@ -76,7 +76,8 @@ body{
 }
 
 #header {
-	background-color: lightblue;
+	background-color: #FFF9CC;
+	/* #FFB6C1; */
 }
 
 #header .inner,
@@ -84,7 +85,7 @@ body{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: cornflowerblue;
+	/*background-color: cornflowerblue;*/
 }
 
 #logo a {
@@ -102,12 +103,19 @@ body{
 	height: 100px;
 	width: calc(100% - 400px);
 	margin-right: 50px;
-	background-color: deeppink;
+	/* background-color: deeppink;*/
 }
 
 #nav ul {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 2.5rem;
+}
+#nav p{
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
 	height: 100%;
 	font-size: 2.5rem;
@@ -152,6 +160,7 @@ body{
 #footer .footer_txt {
 	width: calc(100% - 650px);
 	padding-left: 50px;
+	margin: auto 0;
 	/* background-color: darkgoldenrod;*/
 }
 
@@ -235,11 +244,18 @@ body{
 	margin: 100px 0;
 }
 #movies #card_box .card {
-	width: 300px;
-    padding: 50px;
+	width: 350px;
+   /* padding: 50px;*/
     border-radius: 18px;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
     background-color: yellow;
-    margin: 10px 0;
+    margin: 30px 0px;
+		position: relative;
+		overflow: hidden;
+		box-shadow: 4px 5px 14px -2px rgba(102,102,102,0.74);
+-webkit-box-shadow: 4px 5px 14px -2px rgba(102,102,102,0.74);
+-moz-box-shadow: 4px 5px 14px -2px rgba(102,102,102,0.74);
 
 }
 
@@ -251,6 +267,7 @@ body{
 
 #movies .card img {
 	width: 100%;
+	height: 450px;
 }
 
 #movies h2{
@@ -259,6 +276,59 @@ body{
 	font-size: 5.2rem;
 	margin-bottom: 70px;
 	color:#ff7591
+}
+
+#movies .card h3{
+
+	font-size: 2.2rem;
+	padding: 20px 0px 20px 20px;
+	font-weight: bold;
+	background-color:#FBDE00;
+	margin-top: -3px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	position: relative;
+	z-index: 7;
+}
+
+#movies .card .txt{
+	padding: 20px 20px;
+	line-height: 2.1rem;
+	box-sizing: border-box;
+	position: absolute;
+	background-color: rgba(256, 256, 256, 0.9);
+	/*bottom: -251px;*/
+	bottom: 62px;
+	width: 350px;
+	/* overflow-y: scroll;
+	height: 229px; */
+	z-index: 5;
+	transition: 0.8s;
+	transform: translate(0px, 334px);
+}
+
+#movies .card .rating{
+	background-color: rgba(255, 117, 145, 0.8);
+	padding: 10px;
+	position: absolute;
+	/*top: -40px;*/
+	top: 7px;
+	font-size: 2rem;
+	right: 7px;
+	border-radius: 10px;
+	transition: 0.8s;
+	transform: translate(0px, -47px);
+}
+
+#movies .card:hover .txt {
+	/*bottom: 62px;*/
+	transform: translate(0px, 0px);
+}
+
+#movies .card:hover .rating {
+	transform: translate(0px, 0px);
+	/*top: 7px;*/
+
 }
 
 /*검색창*/
@@ -312,18 +382,89 @@ border-bottom: 3px solid #ff7591;
 		margin: 0;
 	}
 
-	#movies .card h3{
+	.search_btn_close{
+		border: none;
+    padding: 5px;
+    background-color: transparent;
+    font-size: 4rem;
+    position: absolute;
+    top: -81px;
+    right: -77px;
+}
 
-		font-size: 2.2rem;
-    padding: 20px 0px 20px 20px;
-    font-weight: bold;
-    background-color:#FBDE00;
-		margin-top: -3px;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;
-	}
+/*slide */
 
-	#movies .card .txt{
-		padding:10px;
-		line-height: 2.1rem;
-	}
+/* #slide .swiper {
+	width: 100%;
+	height: 100%;
+}
+
+#slide .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slide .swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#slide .swiper-slide{
+	background-color: beige;
+}
+		
+
+#slide .swiper-pagination {
+	position: absolute;
+	top : 596px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+} */
+
+
+#slide .swiper {
+	width: 100%;
+	height: 100%;
+}
+
+#slide .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slide .swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#slide .swiper-pagination {
+	position: absolute;
+	top : 596px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+} 
+
+
+:root {
+	--swiper-theme-color: #ff7591;
+}
+
+/*#slide .slide_content{
+	width: 90%;
+	display: flex; 
+	justify-content: space-between;
+}*/

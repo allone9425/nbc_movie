@@ -1,3 +1,10 @@
+//검색버튼 누르면 되게하기
+document.querySelector('.search_btn').addEventListener('click',function(event){
+  event.preventDefault();
+})
+
+
+
 //검색버튼을 클릭하면 나타나고 클릭하면 닫기
 //
 let nav_search = document.querySelector('.nav_search');
@@ -10,6 +17,15 @@ let search_box = document.getElementById('movie_search');
     search_box.classList.add('hide')
     search_box.classList.remove('show')
   }
+
+// 검색창 옆에 X 클릭하면 닫기
+document.querySelector('.search_btn_close').addEventListener('click',
+function(){
+  let search_box = document.getElementById('movie_search');
+  search_box.classList.add('hide')
+  search_box.classList.remove('show')
+})
+
 
 //document.querySelector('#movie_search').classList.add('show-modal')
 
@@ -29,11 +45,11 @@ let search_box = document.getElementById('movie_search');
 //키를 누를 때마다 엔터 키를 확인하고, 엔터 키가 눌렸을 때 검색 버튼에 대한 클릭 이벤트가 발생함.
 //이렇게 하면 텍스트를 입력한 후 엔터 키를 누르면 검색 버튼이 클릭됨
 //mdn https://developer.mozilla.org/ko/docs/Web/API/KeyboardEvent/key
-document.querySelector('.search_txt').addEventListener('keydown', function(event) {
+/* document.querySelector('.search_txt').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     document.querySelector('.search_btn').click();
   }
-});
+}); */
 
 
 
@@ -82,3 +98,15 @@ document.querySelector('.search_btn').addEventListener('click', function () {
 
 })
 
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNTA4NzM5YmI2ZWZkN2FjNWMwZDc5ODdmNGY1MGVlZSIsInN1YiI6IjY1MmYzYjYzZWE4NGM3MDEwYzFkZDYzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2JhSAs7vPbaBQlp1r4qNy6zPm14hpWTUpuWliP6fwRk'
+  }
+};
+
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));

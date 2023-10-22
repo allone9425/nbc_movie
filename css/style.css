@@ -68,6 +68,7 @@ body{
 	font-size: 1.6rem;
 	font-family: 'Pretendard-Regular';
 	color:#343434;
+	min-width: 768px;
 }
 .max {
 	width: 100%;
@@ -507,7 +508,7 @@ border-bottom: 3px solid #ff7591;
 
 
 :root {
-	--swiper-theme-color: #ff7591;
+	--swiper-theme-color: #FBDE00;
 }
 
 /*#slide .slide_content{
@@ -525,3 +526,140 @@ border-bottom: 3px solid #ff7591;
 	margin-top:40px;
 	color:#ff7591;
 }
+#slide .slide_poster{
+	width: 100%;
+}
+
+
+
+
+#slide .slide_tit{
+	font-size: 2.2rem;
+	padding: 20px 0px;
+	font-weight: bold;
+	background-color: #ff7591;
+
+	position: absolute;
+	z-index: 7;
+	bottom: 0;
+	width: 100%;
+	color:#fff
+}
+
+
+.btn_top {
+	right: 30px;
+	bottom: 30px;
+	position: fixed;
+	background-color: #FBDE00;
+	border-radius: 5px;
+	display: block;
+	cursor: pointer;
+	font-size: 4rem;
+	padding: 10px;
+}
+
+.btn_top:hover{
+	background-color:#ff7591;
+	color:#fff;
+}
+
+
+/*모바일*/
+@media all and (max-width:1300px){
+	#footer .max{
+		max-width: 1100px;
+	}
+
+}
+
+@media all and (max-width:1246px){
+	#footer .max{
+		max-width: 1000px;
+	}
+}
+
+@media all and (max-width:1150px){
+	.max{
+		max-width: 930px;
+	}
+}
+@media all and (max-width:1100px){
+	.max{
+		max-width: 900px !important;
+	}
+
+
+	#footer .footer_txt {
+    padding-left: 10px;
+	}
+}
+@media all and (max-width:947px){
+
+	#movies #card_box .card {
+    width: 300px;
+		
+	margin: 30px 10px;
+}
+#movies .card .txt {
+	width: 300px;
+}
+
+#movies .card img {
+	height: 338px;
+}
+}
+
+@media all and (max-width:865px){
+
+	.btn_top {
+    right: 12px;}
+		#footer .footer_shortcut_box {
+			width: 350px;
+		}
+
+		#footer .footer_shortcut_txt p {
+			padding: 5px 5px;}
+
+}
+@media all and (max-width:835px){
+
+	#footer .footer_txt {
+		width: calc(100% - 550px);}
+
+		#footer .footer_shortcut_box {
+			width: 300px;
+	}
+
+	.max{
+		max-width: 800px !important;
+	}
+}
+@media all and (max-width:768px){
+	#footer .footer_shortcut_box {
+    width: 200px;}
+		#footer .inner {
+			justify-content: center;
+		}
+
+		#movies #card_box .card {
+			width: 250px;}
+
+			#movies .card .txt {
+				width: 250px;
+				/*bottom: -43px;*/
+				padding: 10px 10px;
+				transform: translate(0px, 400px);
+				bottom: 60px;
+				height: 280px;
+				overflow: auto;
+		}
+		#movies .card h3 {
+			font-size: 2rem;
+		}
+}
+
+.btn_location{
+		bottom: 179px;
+}
+

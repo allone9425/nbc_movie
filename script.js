@@ -90,35 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });//data['results'][0]['title'];
   }) //fetch
 
-  // 슬라이드
-  /*const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNTA4NzM5YmI2ZWZkN2FjNWMwZDc5ODdmNGY1MGVlZSIsInN1YiI6IjY1MmYzYjYzZWE4NGM3MDEwYzFkZDYzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2JhSAs7vPbaBQlp1r4qNy6zPm14hpWTUpuWliP6fwRk'
-    }
-  };
-
-  fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', options)
-    .then(response => response.json())
-    .then(data => {
-      let movie_list2 = data['results'];
-      movie_list2.forEach(movie_box => {
-        let movie_title = movie_box['title'];
-        let movie_poster = movie_box['poster_path'];
-         let slide_html = `
-         <div class="swiper-slide">
-         <div class="slide_content">
-           <p class="slide_poster"><img src="https://image.tmdb.org/t/p/original${movie_poster}"></p>
-           <h3 class="slide_tit">${movie_title}</h3>
-         </div>
-         </div>
-         `;
-        document.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', slide_html);
-      });
-    })
-    .catch(err => console.error(err));
-*/
+  
 
 }); //document ready
 
@@ -144,9 +116,7 @@ document.querySelector('.search_btn').addEventListener('click', function () {
 
 })
 
-//3377 
-window.addEventListener('scroll',function(){
-  console.log(window.scrollY) })
+
 
 
   window.addEventListener('scroll', function () {

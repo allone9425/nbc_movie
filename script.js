@@ -47,29 +47,7 @@ nav_search.addEventListener('click', function () {
     })
 
 
-  //document.querySelector('#movie_search').classList.add('show-modal')
-
-
-  //    if (search_box.style.display === 'none') {
-  //     console.log(1);
-  //      search_box.style.display = 'block';
-  //  } else {
-  //   console.log(2);
-  //      search_box.style.display = 'none';
-  //  }
-  // /
 })
-
-
-//검색창에서 입력하고 엔터치면 클릭 되도록 하기 
-//키를 누를 때마다 엔터 키를 확인하고, 엔터 키가 눌렸을 때 검색 버튼에 대한 클릭 이벤트가 발생함.
-//이렇게 하면 텍스트를 입력한 후 엔터 키를 누르면 검색 버튼이 클릭됨
-//mdn https://developer.mozilla.org/ko/docs/Web/API/KeyboardEvent/key
-/* document.querySelector('.search_txt').addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    document.querySelector('.search_btn').click();
-  }
-}); */
 
 
 
@@ -113,18 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 }); //document ready
 
-//카드 클릭시 alert 띄우기 
-/*document.addEventListener('DOMContentLoaded', function () {
-  var movie_cards_box = document.querySelectorAll('.card');
-  console.log(movie_cards_box);
-  movie_cards_box.forEach(function (card) {
-    card.addEventListener('click', function () {
-      var title = card.querySelector('.title').innerText;
-      alert('선택한 영화: ' + title);
-    });
-  });
-});
-*/
+
 document.querySelector('.search_btn').addEventListener('click', function () {
   let searchText = document.querySelector('.search_txt').value;
   // let 영화제목 = document.querySelector('.card .title').innerText;
@@ -145,10 +112,7 @@ document.querySelector('.search_btn').addEventListener('click', function () {
 
 })
 
-//3377 
-/*window.addEventListener('scroll',function(){
-  console.log(window.scrollY) })
-*/
+
 
   window.addEventListener('scroll', function () {
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -160,5 +124,5 @@ document.querySelector('.search_btn').addEventListener('click', function () {
     }
   });
  
-  //alert id
+  
 

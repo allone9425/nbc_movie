@@ -1,3 +1,12 @@
+
+
+// 카드를 클릭하면 모달창 띄우기 
+  const cards_box = document.getElementsByClassName('card');
+  for (var i = 0; i < cards_box.length; i++) {
+    cards_box[i].addEventListener('click', function() {
+      alert(this.textContent);
+    });
+  }
 // 탑버튼
 document.querySelector('.btn_top').addEventListener('click', function(event) {
   event.preventDefault();
@@ -75,26 +84,47 @@ document.addEventListener("DOMContentLoaded", function () {
       let movie_rating = movie_box['vote_average'];
       let movie_poster = movie_box['poster_path'];
       let movie_date = movie_box['release_date'];
+      let movie_id = movie_box['id']
 
       let movie_year = movie_date.substring(0, 4); //2023-10-10 이렇게 나오는것을 2023만 출력하기 위해서 사용
 
-      let temp_html = `    <div class="card">
+      let temp_html = `    <div class="card" id="${movie_id}">
                             <p><img src="https://image.tmdb.org/t/p/original${movie_poster}"></p>
                             <h3 class="title">${movie_title}</h3>
                             <div class="txt">${movie_overview}</div>
                             <p class="rating">⭐ ${movie_rating}</p>
                             <p class="movie_date">🎬 ${movie_year}</p>
                           </div>`
-      document.querySelector('#card_box').insertAdjacentHTML('beforeend', temp_html)
+      document.querySelector('#card_box').insertAdjacentHTML('beforeend', temp_html);
       // console.log(movie_poster);
-    });//data['results'][0]['title'];
+    });
+    const movie_cards_box = document.querySelectorAll('.card');
+    //
+    movie_cards_box.forEach(function (card) {
+
+      card.addEventListener('click', function () {
+        alert('선택한 영화: ' + card.id);
+      });
+    });
+    //data['results'][0]['title'];
   }) //fetch
 
-  
+ 
 
 }); //document ready
 
-
+//카드 클릭시 alert 띄우기 
+/*document.addEventListener('DOMContentLoaded', function () {
+  var movie_cards_box = document.querySelectorAll('.card');
+  console.log(movie_cards_box);
+  movie_cards_box.forEach(function (card) {
+    card.addEventListener('click', function () {
+      var title = card.querySelector('.title').innerText;
+      alert('선택한 영화: ' + title);
+    });
+  });
+});
+*/
 document.querySelector('.search_btn').addEventListener('click', function () {
   let searchText = document.querySelector('.search_txt').value;
   // let 영화제목 = document.querySelector('.card .title').innerText;
@@ -103,7 +133,6 @@ document.querySelector('.search_btn').addEventListener('click', function () {
   for (i = 0; i <= search_movie_list.length; i++) {
 
     if (search_movie_list[i].innerHTML.includes(searchText)) {
-      // console.log('반갑습니다');
       search_movie_list[i].parentElement.style = 'display:block';
     }
     else {
@@ -116,8 +145,10 @@ document.querySelector('.search_btn').addEventListener('click', function () {
 
 })
 
-
-
+//3377 
+/*window.addEventListener('scroll',function(){
+  console.log(window.scrollY) })
+*/
 
   window.addEventListener('scroll', function () {
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -128,4 +159,6 @@ document.querySelector('.search_btn').addEventListener('click', function () {
       document.getElementById('btn_top').classList.remove('btn_location');
     }
   });
-  
+ 
+  //alert id
+
